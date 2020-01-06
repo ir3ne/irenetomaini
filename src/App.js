@@ -2,7 +2,10 @@ import React from 'react';
 import scss from './scss.svg';
 import './App.scss';
 
+
+
 function App() {
+  if (navigator.onLine)
   return (
     <div className="App">
       <div className="Title">Irene Tomaini</div>
@@ -74,6 +77,10 @@ function App() {
         </a>
       </header> */}
     </div>
+  );
+  else 
+  return (
+    <div>ciao</div>
   );
 }
 
