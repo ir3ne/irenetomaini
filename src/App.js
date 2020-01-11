@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
+import star from './star.gif';
 import scss from './scss.svg';
 import './App.scss';
 
 function App() {
+  const [isShown, setIsShown] = useState(false);
   if (navigator.onLine)
   return (
     <div className="App">
@@ -74,7 +76,10 @@ function App() {
           Learn React
         </a>
       </header> */}
-      <div className="Offline">
+      <div className="Offline"
+      onMouseEnter={() => setIsShown(true)}
+      onMouseLeave={() => setIsShown(false)}
+      > 
         <svg width="54px" height="41px" viewBox="0 0 54 41" version="1.1" xmlns="http://www.w3.org/2000/svg">
             <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                 <g id="Artboard" transform="translate(-1289.000000, -73.000000)" fill="#000000" fill-rule="nonzero">
@@ -85,17 +90,28 @@ function App() {
             </g>
         </svg>
         <div className="Offline-text">
-          Go Offiline
+          <span>Go Offiline</span>
         </div>
+        {isShown && (
         <div className="Offline-tooltip">
-          This is the tooltip text and I am Budda
+          <div>Disable <b>WiFi</b> and <b>refresh</b> the page.</div>
+          <img width="180px" src={star} alt=""/>
         </div>
+        )}
       </div>
     </div>
   );
   else 
   return (
-    <div>ciao</div>
+    <div className="OfflineWrapper">
+      <div className="OfflineContent">
+        <div>I did not want to move.
+          <br/>
+          For I had the feeling that this was a place, once seen, that could not be seen again. 
+          <br/>If I left and then came back, it would not be the same; no matter how many times I might return to this particular spot the place and feeling would never be the same, something would be lost or something would be added, and there never would exist again, through all eternity, all the integrated factors that made it what it was in this magic moment.</div>
+        <div className="author">~ Clifford D. Simak ~</div>
+      </div>
+    </div>
   );
 }
 
