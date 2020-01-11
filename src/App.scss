@@ -1,23 +1,32 @@
 .App {
   position: relative;
   display: flex;
+  font-size: 16px;
   flex-direction: column;
   justify-content: center;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   margin: 1rem;
   padding: 2rem;
   box-shadow: 0px 0px 30px 0px rgba(33, 30, 25, 0.1);
-  height: calc(100vh - 6rem);
   border-radius: 10px;
+  height: calc(100vh - 6rem);
 }
 
 .Content {
   width: 70%;
+  max-width: 800px;
+  min-width: 280px;
   
   .Contacts {
     display: flex;
     flex-direction: row;
     margin-top: 20px;
+    color: #e32044;
+
+    @media (max-width: 375px) {
+      flex-direction: column;
+      margin-top: 30px;
+    }
 
     &-link {
       margin-right: 12px;
@@ -36,6 +45,19 @@
         color: inherit;
         cursor: pointer;
         align-items: center;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      @media (max-width: 375px) {
+        margin-right: 0;
+        margin-bottom: 8px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
       }
     }
 
@@ -43,6 +65,10 @@
       line-height: 1.5;
       font-size: 14px;
       font-weight: 400;
+
+      @media (max-width: 375px) {
+        font-size: 16px;
+      }
     }
   }
 }
@@ -50,11 +76,95 @@
 .Title {
   position: absolute;
   top: 2rem;
-  color: #E11B3F;
+  color: #e32044;
   font-size: 18px;
   font-weight: bold;
 }
 
 .Text {
-  font-size: 36px;
+  font-size: 1.8rem;
+}
+
+.Offline {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
+
+  svg {
+    width: 38px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  &-text {
+    display: inline-block;
+    vertical-align: middle;
+    color: #fff;
+    font-size: 0.75rem;
+    line-height: 1;
+    cursor: inherit;
+    border-radius: 10px;
+    padding: 3px 7px;
+    background-color: #000;
+  }
+
+  &-tooltip {
+    padding: 4px 8px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 1px #e32044;
+    width: 180px;
+    position: absolute;
+    left: -220px;
+
+    img {
+      margin-top: 10px;
+    }
+  }
+
+  &:hover {
+    .Offline-text {
+      animation: moving 2s infinite linear;
+    }
+  }
+}
+
+@keyframes moving {
+  100% { 
+    transform: translateY(-40%);  
+  }
+}
+
+.OfflineWrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.OfflineContent {
+  font-size: 18px;
+  line-height: 23px;
+  border-radius: 10px;
+  width: 360px;
+  padding: 1.8rem;
+  margin: 0 auto;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .author {
+    margin-top: 20px;
+    font-size: 14px;
+  }
 }
