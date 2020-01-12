@@ -94,7 +94,7 @@ function App() {
         </div>
         {isShown && (
         <div className="Offline-tooltip">
-          <div>Disable <b>WiFi</b> and <b>refresh</b> the page.</div>
+          <div>Disable <b>WiFi</b></div>
           <img width="180px" src={star} alt=""/>
         </div>
         )}
