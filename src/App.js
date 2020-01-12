@@ -1,12 +1,15 @@
 import React, {useState} from 'react';
+import { Offline, Online } from "react-detect-offline";
 import star from './star.gif';
 import scss from './scss.svg';
 import './App.scss';
 
 function App() {
   const [isShown, setIsShown] = useState(false);
-  if (navigator.onLine)
+
   return (
+    <div>
+      <Online>
     <div className="App">
       <div className="Title">Irene Tomaini</div>
         <div className="Content">
@@ -99,20 +102,26 @@ function App() {
         </div>
         )}
       </div>
+     
     </div>
-  );
-  else 
-  return (
-    <div className="OfflineWrapper">
-      <div className="OfflineContent">
-        <div>I did not want to move.
-          <br/>
-          For I had the feeling that this was a place, once seen, that could not be seen again. 
-          <br/>If I left and then came back, it would not be the same; no matter how many times I might return to this particular spot the place and feeling would never be the same, something would be lost or something would be added, and there never would exist again, through all eternity, all the integrated factors that made it what it was in this magic moment.</div>
-        <div className="author">~ Clifford D. Simak ~</div>
-      </div>
-    </div>
-  );
+    </Online>
+     <Offline>
+     <div className="OfflineWrapper">
+       <div className="OfflineContent">
+         <div>I did not want to move.
+           <br/>
+           For I had the feeling that this was a place, once seen, that could not be seen again. 
+           <br/>If I left and then came back, it would not be the same; no matter how many times 
+           I might return to this particular spot the place and feeling would never be the same, 
+           something would be lost or something would be added, and there never would exist again, 
+           through all eternity, all the integrated factors that made it what it was in this magic moment.</div>
+         <div className="author">~ Clifford D. Simak ~</div>
+       </div>
+     </div>
+     </Offline> 
+     </div> 
+       
+  );   
 }
 
 export default App;
