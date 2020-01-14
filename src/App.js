@@ -13,13 +13,13 @@ function App() {
     <div className="App">
       <div className="Title">Irene Tomaini</div>
         <div className="Content">
-          <div className="Text">
+          {/* <div className="Text">
           Irene Tomaini is a Front-end developer specializing in UI, CSS, accessibility.
           <br />
           Scss enthusiast <img src={scss} alt="scss rocks" width="38" height="38" />.
           <br />
           She works remotely from Italy.
-          </div>
+          </div> */}
         <div className="Contacts">
           <div className="Contacts-link">
           <a href="https://www.linkedin.com/in/irenetomaini/">
