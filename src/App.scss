@@ -1,5 +1,10 @@
+:root {
+	background-color: #fff;
+}
+
 .App {
   position: relative;
+  color: #202020;
   display: flex;
   font-size: 16px;
   flex-direction: column;
@@ -16,7 +21,7 @@
   width: 70%;
   max-width: 800px;
   min-width: 280px;
-  
+
   .Contacts {
     display: flex;
     flex-direction: row;
@@ -138,8 +143,8 @@
 }
 
 @keyframes moving {
-  100% { 
-    transform: translateY(-40%);  
+  100% {
+    transform: translateY(-40%);
   }
 }
 
@@ -174,12 +179,12 @@
   @keyframes slidein {
     from {
       margin-top: 30px;
-      opacity: 0; 
+      opacity: 0;
     }
-  
+
     to {
       margin-top: 0;
-      opacity: 1; 
+      opacity: 1;
     }
   }
 
