@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import { Offline, Online } from "react-detect-offline";
-import scss from './assets/scss.svg'
-import star from './assets/star.gif'
-import './App.scss'
+import './App.scss';
+import scss from './assets/scss.svg';
+import star from './assets/star.gif';
+import PinnedRepos from './PinnedRepos';
 
 function App() {
   const [isShown, setIsShown] = useState(false);
@@ -62,32 +63,34 @@ function App() {
 					</a>
 				</div>
 				</div>
+				<div className="ReposContainer">
+					<PinnedRepos />
+				</div>
 			</div>
 
-			<div className="Offline"
-			onMouseEnter={() => setIsShown(true)}
-			onMouseLeave={() => setIsShown(false)}
-			>
-				<svg width="54px" height="41px" viewBox="0 0 54 41" version="1.1" xmlns="http://www.w3.org/2000/svg">
-					<g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-						<g id="Artboard" transform="translate(-1289.000000, -73.000000)" fill="#000" fillRule="nonzero">
-							<g id="wifi" transform="translate(1289.000000, 73.000000)">
-								<path d="M53.6373571,10.5524818 C46.3600412,3.74690885 36.8986867,0 26.999955,0 C17.1012233,0 7.63997426,3.74690885 0.36265831,10.5524818 C-0.0943360381,10.9784974 -0.12291796,11.698026 0.296740593,12.1595964 L26.1716066,40.6318542 C26.3847581,40.8665365 26.6857648,41 26.999955,41 C27.3141452,41 27.6151518,40.8665365 27.8283034,40.6318542 L53.7031694,12.1595964 C54.1229334,11.698026 54.0943515,10.9783906 53.6373571,10.5524818 Z M26.999955,38.1794349 L2.72472741,11.4666536 C9.46594775,5.53307813 18.0440048,2.27763542 27.0000604,2.27763542 C35.9561161,2.27763542 44.5341731,5.53307813 51.2753935,11.4666536 L26.999955,38.1794349 Z" id="Shape"></path>
+				<div className="Offline"
+				onMouseEnter={() => setIsShown(true)}
+				onMouseLeave={() => setIsShown(false)}
+				>
+					<svg width="54px" height="41px" viewBox="0 0 54 41" version="1.1" xmlns="http://www.w3.org/2000/svg">
+						<g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+							<g id="Artboard" transform="translate(-1289.000000, -73.000000)" fill="#000" fillRule="nonzero">
+								<g id="wifi" transform="translate(1289.000000, 73.000000)">
+									<path d="M53.6373571,10.5524818 C46.3600412,3.74690885 36.8986867,0 26.999955,0 C17.1012233,0 7.63997426,3.74690885 0.36265831,10.5524818 C-0.0943360381,10.9784974 -0.12291796,11.698026 0.296740593,12.1595964 L26.1716066,40.6318542 C26.3847581,40.8665365 26.6857648,41 26.999955,41 C27.3141452,41 27.6151518,40.8665365 27.8283034,40.6318542 L53.7031694,12.1595964 C54.1229334,11.698026 54.0943515,10.9783906 53.6373571,10.5524818 Z M26.999955,38.1794349 L2.72472741,11.4666536 C9.46594775,5.53307813 18.0440048,2.27763542 27.0000604,2.27763542 C35.9561161,2.27763542 44.5341731,5.53307813 51.2753935,11.4666536 L26.999955,38.1794349 Z" id="Shape"></path>
+								</g>
 							</g>
 						</g>
-					</g>
-				</svg>
-				<div className="Offline-text">
-				<span>Go Offline</span>
+					</svg>
+					<div className="Offline-text">
+					<span>Go Offline</span>
+					</div>
+					{isShown && (
+					<div className="Offline-tooltip">
+					<div>Disable <b>WiFi</b></div>
+					<img width="180px" src={star} alt="offline"/>
+					</div>
+					)}
 				</div>
-				{isShown && (
-				<div className="Offline-tooltip">
-				<div>Disable <b>WiFi</b></div>
-				<img width="180px" src={star} alt="offline"/>
-				</div>
-				)}
-			</div>
-
 			</div>
     	</Online>
      	<Offline>
