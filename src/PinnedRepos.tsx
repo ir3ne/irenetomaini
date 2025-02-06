@@ -34,7 +34,7 @@ const PinnedRepos = () => {
 
   return (
     <div>
-      <div className="title">Pinned Repositories</div>
+      <div className="repos-title">Pinned Repositories</div>
 	  {loading ? (
         <Loader />
       ) : (
@@ -42,10 +42,9 @@ const PinnedRepos = () => {
         {repos.map(repo => (
           <div key={repo.name} className="repo-card">
             <a href={repo.url} target="_blank" rel="noopener noreferrer">
-              <h3>{repo.name}</h3>
+              <div className="repo-name">{repo.name}</div>
             </a>
             <p>{repo.description}</p>
-            <p>⭐ {repo.stargazerCount} | 🍴 {repo.forkCount}</p>
           </div>
         ))}
       </div>
