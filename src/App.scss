@@ -194,14 +194,14 @@
 	max-width: 60%;
 }
 
-.repos-container {
+.ReposCardContainer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, auto);
   gap: 16px;
 }
 
-.repo-card {
+.RepoCard {
   padding: 16px;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -210,15 +210,19 @@
   font-size: 14px;
 }
 
-.repos-title {
+.ReposTitle {
   color: #e32044;
   font-weight: 600;
   margin-bottom: 1rem;
 }
 
-.repo-name {
+.RepoName {
 	color: #202020;
 	text-decoration: none;
+}
+
+.loader {
+	font-size: 14px;
 }
 
 @media screen and (max-width: 768px) {
@@ -229,11 +233,7 @@
 		max-width: 100%;
 	}
 
-  .repos-container {
+  .ReposCardContainer {
 	grid-template-columns: repeat(1, 1fr);
   }
-}
-
-.loader {
-	font-size: 14px;
 }

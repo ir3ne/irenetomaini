@@ -34,15 +34,15 @@ const PinnedRepos = () => {
 
   return (
     <div>
-      <div className="repos-title">Pinned Repositories</div>
+      <div className="ReposTitle">Pinned Repositories</div>
 	  {loading ? (
         <Loader />
       ) : (
-      <div className="repos-container">
+      <div className="ReposCardContainer">
         {repos.map(repo => (
-          <div key={repo.name} className="repo-card">
+          <div key={repo.name} className="RepoCard">
             <a href={repo.url} target="_blank" rel="noopener noreferrer">
-              <div className="repo-name">{repo.name}</div>
+              <div className="RepoName">{repo.name}</div>
             </a>
             <p>{repo.description}</p>
           </div>
