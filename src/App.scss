@@ -11,7 +11,6 @@
   padding: 2rem;
   box-shadow: 0px 0px 30px 0px rgba(33, 30, 25, 0.1);
   border-radius: 10px;
-  height: calc(100vh - 6rem);
 }
 
 .Content {
@@ -189,8 +188,21 @@
   }
 }
 
+.TalksSection {
+	margin-top: 3.4rem;
+
+	ul {
+		padding-left: 1rem;
+		margin: 0;
+	}
+
+	a {
+		color: #202020;
+	}
+}
+
 .ReposContainer {
-	margin-top: 3.6rem;
+	margin-top: 2rem;
 	max-width: 60%;
 }
 
@@ -210,7 +222,8 @@
   font-size: 14px;
 }
 
-.ReposTitle {
+.SectionTitle {
+	font-size: 1rem;
   color: #e32044;
   font-weight: 600;
   margin-bottom: 1rem;
