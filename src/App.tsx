@@ -3,6 +3,7 @@ import { Offline, Online } from "react-detect-offline";
 import './App.scss';
 import scss from './assets/scss.svg';
 import star from './assets/star.gif';
+import pdfFile from './assets/Emp-Code-centric-Reviews.pdf';
 import PinnedRepos from './PinnedRepos';
 
 function App() {
@@ -62,6 +63,14 @@ function App() {
 							<small><b>/irenetomaini1</b></small>
 							</a>
 						</div>
+						</div>
+						<div className="TalksSection">
+							<h2 className="SectionTitle">Talks</h2>
+							<ul>
+								<li>
+									<a href={pdfFile} target="_blank" rel="noopener noreferrer">Code Reviews: Empathetic Code-centric communication 🤝</a>
+								</li>
+							</ul>
 						</div>
 					<div className="ReposContainer">
 						<PinnedRepos />

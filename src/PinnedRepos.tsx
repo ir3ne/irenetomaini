@@ -34,7 +34,7 @@ const PinnedRepos = () => {
 
   return (
     <div>
-      <div className="ReposTitle">Pinned Repositories</div>
+      <h2 className="SectionTitle">Pinned Repositories</h2>
 	  {loading ? (
         <Loader />
       ) : (
