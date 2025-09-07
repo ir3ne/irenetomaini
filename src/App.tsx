@@ -2,8 +2,11 @@ import { useState } from "react";
 import { Offline, Online } from "react-detect-offline";
 import "./App.scss";
 import scss from "./assets/scss.svg";
+import star from "./assets/star.gif";
 import pdfFile from "./assets/Emp-Code-centric-Reviews.pdf";
 import PinnedRepos from "./PinnedRepos";
+import ThemeSwitcher from "./ThemeSwitcher";
+import LinkedInContinuation from "./LinkedInContinuation";
 
 function App() {
   const [isShown, setIsShown] = useState(false);
@@ -17,7 +20,7 @@ function App() {
         "Developing user interfaces for a refurbished sustainable market platform, with a focus on accessibility and performance.",
       achievements: [
         "Build and maintain scalable UI components",
-		"Run A/B tests to optimize product pages",
+        "Run A/B tests to optimize product pages",
         "Implement modern UI/UX designs with focus on accessibility",
         "Optimize application performance and user experience",
       ],
@@ -28,6 +31,7 @@ function App() {
     <>
       <Online>
         <div className="App">
+          <ThemeSwitcher />
           {/* Hero Section */}
           <section className="Hero">
             <div className="Hero-content">
@@ -81,6 +85,9 @@ function App() {
             <div className="Experience-list">
               {experience.map((job, index) => (
                 <div key={index} className="Experience-item">
+                  {job.period.includes("Present") && (
+                    <div className="Experience-badge">Current Role</div>
+                  )}
                   <div className="Experience-header">
                     <h3 className="Experience-title">{job.title}</h3>
                     <div className="Experience-meta">
@@ -97,6 +104,7 @@ function App() {
                 </div>
               ))}
             </div>
+            <LinkedInContinuation />
           </section>
 
           {/* Talks Section */}
@@ -148,7 +156,7 @@ function App() {
                 <g
                   id="Artboard"
                   transform="translate(-1289.000000, -73.000000)"
-                  fill="#000"
+                  fill="currentColor"
                   fillRule="nonzero"
                 >
                   <g id="wifi" transform="translate(1289.000000, 73.000000)">
@@ -168,7 +176,7 @@ function App() {
                 <div>
                   Disable <b>WiFi</b>
                 </div>
-                <img width="180px" src="/src/assets/star.gif" alt="offline" />
+                <img width="180px" src={star} alt="offline" />
               </div>
             )}
           </div>

@@ -1,0 +1,41 @@
+.LinkedIn-continuation {
+  margin-top: 1rem;
+  text-align: left;
+
+  &-text {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  &-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    position: relative;
+
+    &:hover {
+      color: var(--primary-dark);
+      text-decoration: underline;
+    }
+
+    &:focus {
+      outline: 2px solid var(--primary-color);
+      outline-offset: 2px;
+      border-radius: var(--radius-sm);
+    }
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .LinkedIn-continuation {
+    margin-top: 0.75rem;
+
+    &-text {
+      font-size: 0.875rem;
+    }
+  }
+}

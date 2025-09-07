@@ -55,11 +55,7 @@ const PinnedRepos = () => {
                 {repo.languages.edges.length > 0 && (
                   <div className="Project-languages">
                     {repo.languages.edges.slice(0, 3).map(({ node }) => (
-                      <span
-                        key={node.name}
-                        className="Language-tag"
-                        style={{ backgroundColor: "#202020", color: "#ffffff" }}
-                      >
+                      <span key={node.name} className="Language-tag">
                         {node.name}
                       </span>
                     ))}
