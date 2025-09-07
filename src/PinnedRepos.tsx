@@ -21,7 +21,7 @@ const PinnedRepos = () => {
           { Authorization: `Bearer ${TOKEN}` }
         );
 
-        setRepos(data.user.pinnedItems.edges.map(edge => edge.node));
+        setRepos(data.user.pinnedItems.edges.map((edge) => edge.node));
       } catch (error) {
         console.error("Error fetching pinned repos:", error);
       } finally {
@@ -34,21 +34,42 @@ const PinnedRepos = () => {
 
   return (
     <div>
-      <h2 className="SectionTitle">Pinned Repositories</h2>
-	  {loading ? (
+      <h2 className="Section-title">Pinned Repositories</h2>
+      {loading ? (
         <Loader />
       ) : (
-      <div className="ReposCardContainer">
-        {repos.map(repo => (
-          <div key={repo.name} className="RepoCard">
-            <a href={repo.url} target="_blank" rel="noopener noreferrer">
-              <div className="RepoName">{repo.name}</div>
+        <div className="Projects-grid">
+          {repos.map((repo) => (
+            <a
+              key={repo.name}
+              href={repo.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="Project-card-link"
+            >
+              <div className="Project-card">
+                <div className="Project-header">
+                  <h3 className="Project-name">{repo.name}</h3>
+                </div>
+                <p className="Project-description">{repo.description}</p>
+                {repo.languages.edges.length > 0 && (
+                  <div className="Project-languages">
+                    {repo.languages.edges.slice(0, 3).map(({ node }) => (
+                      <span
+                        key={node.name}
+                        className="Language-tag"
+                        style={{ backgroundColor: "#202020", color: "#ffffff" }}
+                      >
+                        {node.name}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
             </a>
-            <p>{repo.description}</p>
-          </div>
-        ))}
-      </div>
-	  )}
+          ))}
+        </div>
+      )}
     </div>
   );
 };
