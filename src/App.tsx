@@ -15,7 +15,7 @@ function App() {
     {
       title: "Web Engineer | Frontend Developer",
       company: "Refurbed",
-      period: "October 2022 - Present",
+      period: "October 2021 - Present",
       description:
         "Developing user interfaces for a refurbished sustainable market platform, with a focus on accessibility and performance.",
       achievements: [
